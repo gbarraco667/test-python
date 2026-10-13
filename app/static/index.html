@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sofre Digital Python Test</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="hero">
+    <div class="badge"><span class="dot" id="live-dot"></span><span id="live-text">Conectando…</span></div>
+    <h1>Sofre Digital <span class="accent">Python Test</span></h1>
+    <p class="subtitle">Si estás viendo esto, el deploy automático funcionó. 🚀</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>⚙️ Aplicación</h2>
+      <dl class="kv">
+        <dt>Versión</dt><dd id="version">—</dd>
+        <dt>Entorno</dt><dd id="environment">—</dd>
+        <dt>Commit</dt><dd id="commit">—</dd>
+        <dt>Deployado</dt><dd id="deployed">—</dd>
+        <dt>Python</dt><dd id="python">—</dd>
+        <dt>Host</dt><dd id="hostname">—</dd>
+        <dt>Plataforma</dt><dd id="platform">—</dd>
+        <dt>Uptime</dt><dd id="uptime">—</dd>
+        <dt>Memoria</dt><dd id="memory">—</dd>
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>🐘 PostgreSQL</h2>
+      <div class="db-status">
+        <span class="pill" id="db-pill">…</span>
+        <span id="db-latency"></span>
+      </div>
+      <dl class="kv">
+        <dt>Base</dt><dd id="db-name">—</dd>
+        <dt>Versión</dt><dd id="db-version">—</dd>
+        <dt>Hora server</dt><dd id="db-time">—</dd>
+      </dl>
+      <div class="counter">
+        <div class="counter-value" id="visits">0</div>
+        <div class="counter-label">visitas registradas en la base</div>
+      </div>
+    </section>
+
+    <section class="card wide">
+      <h2>💬 Muro de mensajes</h2>
+      <p class="muted">Dejá un mensaje: se guarda en Postgres y sobrevive a los redeploys (si el volumen persiste 😉).</p>
+      <form id="message-form" class="form">
+        <input id="author" name="author" placeholder="Tu nombre" maxlength="60" required />
+        <input id="content" name="content" placeholder="¿Qué onda el deploy?" maxlength="280" required />
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="error" id="form-error"></p>
+      <ul class="messages" id="messages"></ul>
+    </section>
+  </main>
+
+  <footer>Hecho con ❤️ por <strong>Sofre Digital</strong> · <a href="/health">/health</a> · <a href="/ready">/ready</a> · <a href="/api/info">/api/info</a> · <a href="/docs">/docs</a></footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
