@@ -9,10 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 COPY requirements.txt ./
-# CA opcional para redes con inspección TLS (ver README). No queda en la imagen.
-RUN --mount=type=secret,id=pip_ca,required=false \
-  if [ -f /run/secrets/pip_ca ]; then export PIP_CERT=/run/secrets/pip_ca; fi; \
-  pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY app ./app
 
